@@ -27,12 +27,7 @@ jobs:
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
       - run: make
       
-      - uses: svenstaro/upload-release-action@v2
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: static-routes4.rsc
-          tag: ${{ github.ref }}
-          file_glob: false
-          asset_name: static-routes4.rsc
-          overwrite: true
-          body: "routes4 only"
+          commit_message: automate update
+          file_pattern: ./*.rsc
