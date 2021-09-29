@@ -22,10 +22,9 @@ jobs:
         with:
           python-version: '3.9' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-      - run: python produce.py --ipv4-list
+      - run: make
       
-      - name: Deliver buildinfo
-        uses: actions/upload-artifact@v2
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          name: OpenWrt_buildinfo
-          path: ./routes4.conf
+          commit_message: automate update
+          file_pattern: ./*.rsc
