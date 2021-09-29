@@ -1,4 +1,4 @@
-/ip/route/remove [find comments=imports]
+/ip/route/remove [find comment=imports]
 /ip/route/add dst-address=1.224.0.0/11 gateway=wg-ay routing-table=main distance=1 comment=imports
 /ip/route/add dst-address=1.208.0.0/12 gateway=wg-ay routing-table=main distance=1 comment=imports
 /ip/route/add dst-address=1.200.0.0/15 gateway=wg-ay routing-table=main distance=1 comment=imports
