@@ -27,8 +27,10 @@ jobs:
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
       - run: make
       
-      - name: Deliver buildinfo
-        uses: actions/upload-artifact@v2
+      - uses: svenstaro/upload-release-action@v2
         with:
-          name: upload result
-          path: ./routes4.conf
+          repo_token: ${{ secrets.YOURTOKEN }}
+          file: ./routes4.conf
+          tag: ${{ github.ref }}
+          file_glob: false
+
