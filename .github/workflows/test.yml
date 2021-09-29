@@ -30,9 +30,9 @@ jobs:
       - uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: routes4.conf
+          file: static-routes4.rsc
           tag: ${{ github.ref }}
           file_glob: false
-          asset_name: routes4.conf
+          asset_name: static-routes4.rsc
           overwrite: true
           body: "routes4 only"
