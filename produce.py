@@ -39,7 +39,7 @@ def dump_bird(lst, f):
             dump_bird(n.child, f)
 
         elif not n.dead:
-            f.write('route %s via "%s";\n' % (n.cidr, args.next))
+            f.write('route %s via %s;\n' % (n.cidr, args.next))
 
 RESERVED = [
     IPv4Network('0.0.0.0/8'),
